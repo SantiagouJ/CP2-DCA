@@ -1,5 +1,8 @@
 import Root from "./Root/Root";
 import { getData } from "./services/Plants";
-getData()
+import PlantsCards from "./components/plantCard";
 
 customElements.define('root-element', Root);
+customElements.define('plants-cards', PlantsCards);
+
+getData()

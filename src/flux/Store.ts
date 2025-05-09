@@ -1,6 +1,8 @@
 import { AppDispatcher, Action } from './Dispatcher';
 
-export type State = {};
+export type State = {
+
+};
 
 type Listener = (state: State) => void;
 
@@ -20,15 +22,25 @@ class Store {
     _handleActions(action: Action): void {
         switch (action.type) {
             case "UNO":
+
+            this._emitChange()
                 break;
         }
     }
 
     private _emitChange(): void {
-        for (const listener of this._listeners) { }
+        for (const listener of this._listeners) { 
+            
+        }
     }
 
-    unsubscribe(listener: Listener): void { }
+    suscribe(listener: Listener): void{
+
+    }
+
+    unsubscribe(listener: Listener): void { 
+        
+    }
 }
 
 export const store = new Store();

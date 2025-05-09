@@ -1,0 +1,1 @@
+import { Plant } from "./types/plantsType";
