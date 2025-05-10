@@ -1,13 +1,17 @@
 import { AppDispatcher, Action } from './Dispatcher';
+import { Plant } from '../services/types/plantsType';
+import { PlantsActionsTypes, PlantsAcions } from './Actions';
 
 export type State = {
-
+    plants: Plant []
 };
 
 type Listener = (state: State) => void;
 
 class Store {
-    private _myState: State = {}
+    private _myState: State = {
+        plants: []
+    }
 
     private _listeners: Listener[] = [];
 
@@ -21,8 +25,13 @@ class Store {
 
     _handleActions(action: Action): void {
         switch (action.type) {
-            case "UNO":
-
+            case PlantsActionsTypes.CREATE_PLANT:
+            if (action.payload === "object") {
+                this._myState= {
+                    ...this._myState,
+                    
+                }
+            }
             this._emitChange()
                 break;
         }
@@ -39,7 +48,7 @@ class Store {
     }
 
     unsubscribe(listener: Listener): void { 
-        
+
     }
 }
 

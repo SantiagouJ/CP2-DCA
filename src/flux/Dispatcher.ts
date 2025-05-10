@@ -1,6 +1,6 @@
 export interface Action {
     type: string;
-    payload?: string;
+    payload?: string | object | number;
 }
 
 export class Dispatcher {
