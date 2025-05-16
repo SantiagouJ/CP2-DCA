@@ -1,11 +1,13 @@
 export type Plant = {
-    commonName: string,
-    floweringSeason: string,
+    common_name: string,
+    flowering_season: string,
     img: string
     id: number,
     origin: string,
-    scientificName: string,
-    sunExposure: string,
+    scientific_name: string,
+    sun_exposure: string,
     type: string,
     watering: string
 }
+
+

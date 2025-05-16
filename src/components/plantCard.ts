@@ -20,43 +20,70 @@ class PlantsCards extends HTMLElement {
 
         this.shadowRoot.innerHTML = `  
 
-    <link rel="stylesheet" href="/public/styles/cardComp.css">
             <style>
             #container{
             background-color: rgb(147, 137, 255);
             border: 2px solid rgb(118, 110, 213);
-            width: 500px;
-            height: 500px;
-            display:flex;
+            width: 300px;
+            height: auto;
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-radius: 20px
+            border-radius: 20px;
+            padding: 20px;
+            margin: 10px;
             }
             img{
-                width: 100px;
-                height: 100px;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 10px;
             }
-            div{
-                background-color: rgb(216, 213, 255);
-                display:flex;
-                flex-direction: column;
-    align-items: center;
-    justify-content: center;
-                
+            .cards-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                padding: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            h1 {
+                font-size: 1.5rem;
+                margin: 10px 0;
+                text-align: center;
+            }
+            h2 {
+                font-size: 1rem;
+                margin: 5px 0;
+                text-align: center;
+            }
+            button{
+                background-color: rgb(101, 89, 235);
+                border: 2px solid rgb(118, 110, 213);
+                border-radius: 10px;
+                padding: 10px;
+                margin: 10px;
+            }
+            button:hover{
+                background-color: rgb(118, 110, 213);
+                cursor: pointer;
+                transition: all 0.3s ease;
+
             }
             </style>
-            <div>
+            <div class="cards-container">
 
             ${data.map((plants:Plant)=>`
                 <div id="container">
-                <h1>${plants.commonName}</h1>
-                <h2>${plants.floweringSeason}</h2>
+                <h1>${plants.common_name}</h1>
+                <h2>${plants.flowering_season}</h2>
                 <img src="${plants.img}" alt="">
                 <h2>${plants.origin}</h2>
-                <h2>${plants.floweringSeason}</h2>
-                <h2>${plants.sunExposure}</h2>
+                <h2>${plants.watering}</h2>
+                <h2>${plants.sun_exposure}</h2>
                 <h2>${plants.type}</h2>
+                <button>Agregar al jardin</button>
                  </div>
                 `).join("")}
 

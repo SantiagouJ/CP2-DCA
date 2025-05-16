@@ -1,6 +1,6 @@
-export async function getData(): Promise<any> {
+export async function getData(){
     try {
-        const response = await fetch("http://192.168.131.101:8080/dca/api/plants")
+        const response = await fetch("utils/data.json")
         const data = await response.json()
         
         return data

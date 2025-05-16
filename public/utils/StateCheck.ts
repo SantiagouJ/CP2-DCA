@@ -1,4 +1,4 @@
-import { State } from "../flux/Store";
+import { State } from "../../src/flux/Store";
 
 export function isStateValid(state: State): boolean {
     // TODO: cambia algo aqui
